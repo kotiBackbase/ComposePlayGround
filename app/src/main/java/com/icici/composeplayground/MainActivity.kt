@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.icici.composeplayground.Constant.buttonPadding
 import com.icici.composeplayground.ui.theme.ComposePlayGroundTheme
 
 class MainActivity : ComponentActivity() {
@@ -73,7 +74,7 @@ fun NavigationButton() {
                 },
                 // in below line we are using modifier
                 // which is use to add padding to our button
-                modifier = Modifier.padding(all = Dp(10F)),
+                modifier = Modifier.padding(all = Dp(buttonPadding)),
 
                 // below line is use to set or
                 // button as enable or disable.
