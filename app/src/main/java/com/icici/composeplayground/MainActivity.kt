@@ -2,11 +2,15 @@ package com.icici.composeplayground
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -32,12 +36,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun NavigationButton(){
-    Row() {
+fun NavigationButton() {
+    Row {
         Column(
             // we are using column to align our
             // imageview to center of the screen.
-            modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(),
 
             // below line is used for specifying
             // vertical arrangement.
@@ -58,10 +64,12 @@ fun NavigationButton(){
                 onClick = {
                     // when user is clicking the button
                     // we are displaying a toast message.
-                    context.startActivity(Intent(
-                        context,
-                        ConversationActivity::class.java
-                    ))
+                    context.startActivity(
+                        Intent(
+                            context,
+                            ConversationActivity::class.java
+                        )
+                    )
                 },
                 // in below line we are using modifier
                 // which is use to add padding to our button

@@ -1,6 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id "org.jlleitschuh.gradle.ktlint"
+    id "io.gitlab.arturbosch.detekt"
+}
+
+detekt {
+    source = files("src/main/java", "src/main/kotlin")
+    config = files("${project.rootDir}/config/detekt/detekt.yml")
+    // other detekt configuration goes here
+    baseline = file("$rootDir/detekt-baseline.xml")
 }
 
 android {
