@@ -5,11 +5,15 @@ plugins {
     id "io.gitlab.arturbosch.detekt"
 }
 
+task installGitHook(type:Copy){
+    from new File(rootProject.rootDir,'scripts/pre-commit')
+    into { new File(rootProject.rootDir,'.git/hooks')}
+    fileMode 0775
+}
+
 detekt {
     source = files("src/main/java", "src/main/kotlin")
     config = files("${project.rootDir}/config/detekt/detekt.yml")
-    // other detekt configuration goes here
-    baseline = file("$rootDir/detekt-baseline.xml")
 }
 
 android {
